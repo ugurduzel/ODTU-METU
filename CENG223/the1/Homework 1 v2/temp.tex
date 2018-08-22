@@ -1,0 +1,256 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+%\usepackage{fitch}
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Ugur Duzel \\
+Id Number :  2171569 \\
+
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+\begin{table}[H]
+\small
+\centering
+\caption{ Question 1.1 }
+\label{table:1}
+\begin{tabular}{|cc|c|c|c|c|c|}	%% specify column number
+\hline 							%% line draw
+$p$ & 
+$q$ & 
+$\neg q$ & 
+$p \rightarrow q$ & 
+$\neg q \land (p \rightarrow q)$ &
+$\neg p$ & 
+$(\neg q \land (p \rightarrow q)) \rightarrow \neg p$ \\
+\hline 
+\hline
+T&F&T&F&F&F&T\\
+\hline
+F&T&F&T&F&T&T\\
+\hline
+T&T&F&T&F&F&T\\
+\hline
+F&F&T&T&T&T&T\\ 
+\hline 
+
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\small
+\centering
+\caption{Question 1.2}
+\label{table:2}
+\begin{tabular}{|ccc|c|c|c|c|c|c|}
+\hline
+$p$ &
+$q$ &
+$r$ &
+$p \lor q$ &
+$\neg p$ &
+$\neg p \lor r$ &
+$(p \lor q) \land (\neg p \lor r)$ &
+$q \lor r$ &
+$((p \lor q) \land (\neg p \lor r)) \rightarrow (q \lor r)$  \\
+\hline
+\hline
+T&T&T&T&F&T&T&T&T\\
+\hline
+F&T&T&T&T&T&T&T&T\\
+\hline
+T&F&T&T&F&T&T&T&T\\
+\hline
+F&F&T&F&T&T&F&T&T\\
+\hline
+T&T&F&T&F&F&F&T&T\\
+\hline
+F&T&F&T&T&T&T&T&T\\
+\hline
+T&F&F&T&F&F&F&F&T\\
+\hline
+F&F&F&F&T&T&F&F&T\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section*{Answer 2}
+
+\begin{equation} 
+\begin{split}
+(p \rightarrow q) \lor (p \rightarrow r)
+& \equiv (\neg p \lor q) \lor (p \rightarrow r) \textit{\quad\quad Using Table 7}\\
+& \equiv (\neg p \lor q) \lor (\neg p \lor r) \textit{\quad\quad Using Table 7}\\
+& \equiv (q \lor r) \lor (\neg p \lor \neg p) \textit{\quad\quad Commutative Laws}\\
+& \equiv (q \lor r) \lor \neg p \textit{\quad\quad\quad\quad\quad Idempotent Laws}\\
+& \equiv \neg (q \lor r) \rightarrow \neg p \textit{\quad\quad\quad\quad Using Table 7}\\
+& \equiv (\neg q \land \neg r) \rightarrow \neg p \textit{\quad\quad\quad De Morgan's Laws}
+\end{split}
+\end{equation}
+
+
+
+\vspace{2cm}
+\section*{Answer 3}
+
+\subsection*{Question 3.1}
+\hspace{3.6cm}
+a) Every cat is friend with at least one dog. 
+
+\hspace{3cm}
+b) There exists at least one cat that is friend with all dogs.
+
+
+\subsection*{Question 3.2}
+\vspace{0.5cm}
+$$a)\quad \forall x \forall y\{[ Eats(x,y) \rightarrow Meal(y)] \rightarrow Customer(x)\}$$\\
+$$b)\quad \neg \forall x\{Chef(x) \rightarrow \forall y[Meal(y) \rightarrow Cooks(x,y)]\}$$\\
+$$c)\quad \exists x \{ Customer(x) \land \exists y [ Chef(y) \land \forall z ((Cooks(y,z) \rightarrow Meal(z)) \rightarrow Eats(x,z))] \}$$\\
+$$d)\quad \forall x \{ Chef(x) \rightarrow \exists y [Knows(x,y) \land Chef(y) \land \forall z ((Cooks(y,z) \rightarrow Meal(z)) \rightarrow \neg Cooks(x,z))]\}$$
+
+
+
+
+\section*{Answer 4}
+
+\begin{table}[H]
+\small
+\centering
+\caption{Question 4}
+\label{table:3}
+\begin{tabular}{|cc|c|c|c|}
+\hline
+$p$ &
+$q$ &
+$\neg p$ &
+$p \rightarrow q$ &
+$\neg q$ \\
+\hline
+\hline
+T&T&F&T&F \\
+\hline
+T&F&F&F&T \\
+\hline
+\textbf{F}&\textbf{T}& \textbf{T}&\textbf{T}&\textbf{F} \\
+\hline
+\textbf{F}&\textbf{F}&\textbf{T}&\textbf{T}&\textbf{T} \\
+\hline
+\end{tabular}
+\end{table}
+
+\hspace{1cm} Considering the last two lines of the Table 3, we can see that when $\neg p$ is true, as given in the premise, $\neg q$ can either be true or false. In conclusion, false implies anything. That's why given entailment cannot be a deduction rule in a sound deductive system.
+
+\section*{Answer 5}
+
+\begin{table}[H]
+	\centering
+	\caption{Question 5}
+	\begin{tabular}{*6{l}}
+		\cline{2-6}
+		\cline{2-6}
+		$1$ & & & $p \rightarrow q$ & \textit{premise}  \\ 
+		
+		$2$ & & & $q \rightarrow r$ & \textit{premise} & \\ 
+				
+		$3$ & & & $r \rightarrow p$ & \textit{premise} & \\ \cline{2-6}
+		
+		$4$ &\multicolumn{1}{|c}{} & & $q$ &\textit{assumption} &\multicolumn{1}{c|}{}\\ 
+		 
+		$5$ &\multicolumn{1}{|c}{}& & $r$ & $\rightarrow$e $2,4$ &\multicolumn{1}{c|}{}\\ 
+		
+		$6$ &\multicolumn{1}{|c}{}& & $p$ &$\rightarrow$e $3,5$ &\multicolumn{1}{c|}{}\\ \cline{2-6}
+		
+		$7$ & & & $q \rightarrow p$ & $\rightarrow$i $4-6$ &\\ 
+		
+		$8$ & & & $p \iff q$ & $\iff$i $1,7$ &\\ \cline{2-6}
+		
+		$9$ &\multicolumn{1}{|c}{} & & $p$ &\textit{assumption} &\multicolumn{1}{c|}{}\\ 
+		 
+		$10$ &\multicolumn{1}{|c}{}& & $q$ &$\rightarrow$e $1,9$&\multicolumn{1}{c|}{}\\ 
+		
+		$11$ &\multicolumn{1}{|c}{}& & $r$ &$\rightarrow$e $2,10$&\multicolumn{1}{c|}{}\\ \cline{2-6}
+		
+		$12$ & & & $p \rightarrow r$ & $\rightarrow$i $9-11$ &\\ 
+
+		$13$ & & & $p \iff r$ &$\iff$i $3,12$ &\\ 
+
+		$14$ & & & $(p \iff q) \land (p \iff r)$ & $ \land i$ $8,13$ &\\ 
+
+	
+
+	\end{tabular}
+\end{table}
+		
+	
+\section*{Answer 6}
+
+\begin{table}[H]
+	\centering
+	\caption{Question 6}
+	\begin{tabular}{*6{l}}
+		\cline{2-6}
+		\cline{2-6}
+		$1$ & & & $\forall x (Q(x) \rightarrow R(x))$ & & \textit{premise}  \\ 
+		
+		$2$ & & & $\exists x (P(x) \rightarrow Q(x))$ & & \textit{premise}  \\ 
+				
+		$3$ & & & $\forall x P(x)$ & & \textit{premise}  \\ \cline{2-6}
+		
+		$4$ &\multicolumn{1}{|c}{} & & $P(c) \rightarrow Q(c)$ & &\multicolumn{1}{c|}{\textit{assumption}}\\ 
+		 
+		$5$ &\multicolumn{1}{|c}{} & & $Q(c) \rightarrow R(c)$ &  &\multicolumn{1}{l|}{$\forall$e $1$}\\ 
+		
+		$6$ &\multicolumn{1}{|c}{} & & $P(c)$ & &\multicolumn{1}{l|}{$\forall$e $$3}\\
+		
+		$7$ &\multicolumn{1}{|c}{}  & & $Q(c)$ &  &\multicolumn{1}{l|}{$\rightarrow$e $4,6$}\\ 
+		
+		$8$ &\multicolumn{1}{|c}{} & & $R(c)$ & &\multicolumn{1}{l|}{$\rightarrow$e $5,7$}\\ 
+		
+		$9$ &\multicolumn{1}{|c}{} & & $P(c) \land R(c)$ & &\multicolumn{1}{l|}{$\land$i $6,8$}\\ 
+		 
+		$10$ &\multicolumn{1}{|c}{}& & $\exists x (P(x) \land R(x))$ &&\multicolumn{1}{l|}{$\exists$i $9$}\\ \cline{2-6}
+		
+		$11$ && & $\exists x (P(x) \land R(x))$ && $\exists$e $2,4-10$\\ 
+	
+	
+
+	\end{tabular}
+\end{table}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+\end{document}
+
+​
+

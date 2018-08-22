@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+
+\noindent
+\HRule \\[3mm]
+\begin{flushright}
+
+                                         \LARGE \textbf{CENG 222}  \\[4mm]
+                                         \Large Statistical Methods for Computer Engineering \\[4mm]
+                                        \normalsize      Spring '2017-2018 \\
+                                           \Large   Take Home Exam 1 \\
+                    \normalsize Deadline: May 25, 23:59 \\
+                    \normalsize Submission: via COW
+\end{flushright}
+\HRule
+
+\section*{Student Information }
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Ugur Duzel\\
+Id Number :  2171569\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+First of all to determine the size of the Monte Carlo simulation I used the the inequality given in our textbook page 116 which is,
+$$N\geq0.25(\frac{z_{\alpha/2}}{\epsilon})^2$$ 
+$$N\geq0.25(\frac{-1.96}{0.005})^2=38416$$ \par
+To not differ from the true value by more than 0.005 with probability 0.95, I need to perform my Monte Carlo simulation 38416 times. \par
+I implemented the popular algorithm in our textbook page 114 to generate five Poisson variables for 5 hours of minion capturing.\par
+Between the lines 19 and 26, starting with an Uniform Random Variable I multiplied it with another new Uniform Random Variable I repeated this process until the result is less than $e^{-\lambda}$. I counted the number of repetitions which gave me a Poisson Random Variable. This is what I concluded from the algorithm. \par
+Then to find the minions which qualify the relationship $W\geq2S$, I used Rejection Method for Generating Random Vector, again from our textbook 5.2.5 page 113. \par
+Between the lines 30 and 45, for the number of minions captured in the last 5 hours - generated as Poisson in every experiment - I took three Uniform Random Variables (U1,U2,V) , using them I calculated Speed and Weight features (S,W) of the current minion (here I chose $b=10$ because it is practically 0 when we put (10,10) into the joint pdf) and these are accepted if $cV \leq f(S,W) $ where c is some value greater than the maximum value of $f_{W,S}(w,s)$ which is $\frac{1}{e^2}=0.135$. \\
+This means I should choose $c>0.135$ therefore I chose $c=0.2$, close to $0.135$ to omit unnecessary calculations. \par
+After this part it is trivial. With a temporary variable I counted how many minions hold the inequality and then I placed the number into an vector. Then in the line 56 I found out which ones are greater than 6. This will give me a vector like [1,0,1,0,...]  mean of this will actually give me the probability of the number of minions I caught in 5 hours having the relationship $W\geq2S$.
+
+\section*{Answer 2}
+For each minion after the generated $W$ and $S$ are accepted by the Rejection Method I simply updated the corresponding index of the totalWeight vector with the current accepted $W$ in the line 46. \\
+After completing all the simulations, each index of the totalWeight vector holds the total weight of the minions in one simulation. Therefore, I took the mean of totalWeight vector which gave me the estimation of the total weight at the end (line 57).
+
+\section*{Answer 3}
+For the number of minions generated as Poisson Random Variable I used Inverse Method to generate $A$ as Exponential Random Variable with $\lambda=2$ in the line 50. Again I used Inverse Method to generate $B$ as Normal Random Variable with $\mu=0$ and $\sigma=1$ in the line 51. I used erfinv built in function for simplicity. Then I calculated the mean of the given expression  for the number of minions. This gave me the expected value of the given expression for this current simulation. I simply placed this into a vector for the expected value estimation and at the and I estimated it by taking the mean of the vector in the line 58.
+
+
+
+
+\end{document}

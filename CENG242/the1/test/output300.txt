@@ -1,0 +1,300 @@
+Caught (1,1)
+Caught (3,1)
+Fail
+Fail
+Fail
+Caught (2,0)
+Fail
+Caught (2,1)
+Caught (1,3)
+Caught (2,1)
+Fail
+Caught (1,1)
+Caught (1,3)
+Fail
+Fail
+Fail
+Fail
+Fail
+Fail
+Fail
+Caught (0,2)
+Fail
+Caught (3,0)
+Fail
+Caught (0,1)
+Caught (0,3)
+Caught (3,3)
+Fail
+Fail
+Caught (0,0)
+Caught (2,2)
+Caught (2,2)
+Caught (2,2)
+Caught (2,2)
+Caught (2,2)
+Fail
+Caught (3,0)
+Caught (3,2)
+Fail
+Caught (3,1)
+Caught (1,0)
+Fail
+Caught (0,0)
+Caught (2,2)
+Caught (0,0)
+Caught (1,1)
+Caught (1,1)
+Fail
+Caught (1,3)
+Fail
+Caught (2,2)
+Caught (0,1)
+Caught (3,3)
+Caught (0,1)
+Caught (0,2)
+Caught (2,1)
+Fail
+Fail
+Caught (3,1)
+Caught (0,1)
+Fail
+Caught (1,1)
+Fail
+Caught (3,2)
+Fail
+Fail
+Caught (3,1)
+Fail
+Fail
+Fail
+Fail
+Fail
+Caught (1,2)
+Fail
+Caught (1,1)
+Fail
+Fail
+Fail
+Caught (2,1)
+Fail
+Caught (1,0)
+Fail
+Fail
+Caught (0,1)
+Caught (1,1)
+Fail
+Caught (3,0)
+Fail
+Caught (3,3)
+Caught (1,0)
+Caught (0,0)
+Caught (2,1)
+Caught (0,1)
+Fail
+Fail
+Fail
+Fail
+Fail
+Caught (2,2)
+Fail
+Fail
+Caught (1,2)
+Fail
+Caught (2,0)
+Fail
+Caught (2,1)
+Caught (2,1)
+Caught (0,1)
+Caught (1,1)
+Fail
+Fail
+Caught (2,2)
+Fail
+Caught (1,2)
+Caught (1,0)
+Fail
+Caught (2,2)
+Fail
+Caught (0,1)
+Fail
+Caught (0,2)
+Caught (0,2)
+Caught (0,1)
+Caught (2,0)
+Caught (2,1)
+Fail
+Fail
+Fail
+Fail
+Caught (0,0)
+Caught (0,2)
+Fail
+Fail
+Fail
+Caught (1,2)
+Caught (3,3)
+Caught (3,2)
+Fail
+Fail
+Caught (2,1)
+Fail
+Fail
+Caught (1,0)
+Fail
+Fail
+Fail
+Fail
+Fail
+Fail
+Caught (1,3)
+Fail
+Fail
+Caught (3,2)
+Fail
+Caught (1,1)
+Fail
+Caught (0,0)
+Caught (2,3)
+Caught (1,2)
+Fail
+Fail
+Caught (1,0)
+Caught (3,0)
+Caught (0,3)
+Fail
+Caught (0,2)
+Caught (2,3)
+Fail
+Fail
+Caught (1,1)
+Caught (3,2)
+Fail
+Fail
+Fail
+Caught (2,0)
+Caught (1,0)
+Fail
+Caught (0,2)
+Caught (0,1)
+Fail
+Fail
+Fail
+Fail
+Fail
+Fail
+Caught (1,2)
+Caught (3,3)
+Caught (1,3)
+Fail
+Caught (3,2)
+Caught (1,2)
+Fail
+Fail
+Fail
+Fail
+Fail
+Fail
+Fail
+Caught (2,1)
+Caught (0,1)
+Caught (2,0)
+Fail
+Fail
+Caught (2,1)
+Caught (3,2)
+Caught (2,1)
+Caught (1,3)
+Caught (3,1)
+Caught (1,1)
+Caught (3,0)
+Caught (3,0)
+Fail
+Caught (1,3)
+Fail
+Fail
+Fail
+Caught (3,2)
+Caught (3,3)
+Caught (0,0)
+Caught (3,0)
+Caught (0,1)
+Caught (1,1)
+Caught (1,3)
+Caught (0,2)
+Fail
+Caught (3,1)
+Caught (3,1)
+Caught (2,0)
+Caught (1,2)
+Fail
+Caught (2,3)
+Caught (0,2)
+Caught (0,3)
+Fail
+Fail
+Caught (1,3)
+Caught (1,3)
+Caught (2,2)
+Caught (2,2)
+Caught (2,0)
+Fail
+Fail
+Caught (3,1)
+Fail
+Fail
+Caught (3,3)
+Fail
+Caught (1,0)
+Caught (2,2)
+Caught (2,1)
+Caught (2,3)
+Caught (3,2)
+Fail
+Caught (2,2)
+Caught (3,0)
+Caught (3,3)
+Fail
+Fail
+Fail
+Fail
+Caught (1,2)
+Caught (3,1)
+Fail
+Caught (3,3)
+Fail
+Fail
+Fail
+Caught (2,3)
+Caught (0,1)
+Fail
+Caught (1,3)
+Fail
+Fail
+Caught (0,0)
+Fail
+Caught (0,3)
+Caught (1,2)
+Fail
+Caught (1,2)
+Caught (0,2)
+Caught (1,0)
+Caught (2,3)
+Caught (3,1)
+Fail
+Fail
+Caught (3,1)
+Fail
+Caught (3,3)
+Fail
+Caught (1,2)
+Fail
+Caught (1,3)
+Fail
+Fail
+Caught (3,2)
+Fail
+Caught (0,0)
+Fail
+Caught (0,2)
+Caught (1,1)

@@ -1,0 +1,333 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Ugur Duzel\\
+Id Number :  2171569\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+\subsection*{a.}
+Let PDA $M=(\{p,q\},\Sigma,\Gamma,p,\{q\})$ be the bottom-up parser for $G$ where $\Sigma=\{a,b,c\}$, $\Gamma=V$ and $\Delta$ contains the following: \\
+
+\begin{equation}
+\begin{split}
+\Delta = \{ & ((p,a,e),(p,a)),\ \ (1)\\
+		& ((p,b,e),(p,b)),\ \ (2) \\
+		& ((p,c,e),(p,c)),\ \ (3) \\
+		& ((p,e,XaXSa),(p,S)),\ \ (4) \\
+		& ((p,e,XbXSb),(p,S)),\ \ (5) \\
+		& ((p,e,c),(p,S)),\ \ (6) \\
+		& ((p,e,Xa),(p,X)),\ \ (7) \\
+		& ((p,e,Xb),(p,X)),\ \ (8) \\
+		& ((p,e,e),(p,X)),\ \ (9) \\
+		& ((p,e,S),(q,e)) \}\ \ (10)
+\end{split}
+\end{equation}
+
+\subsection*{b.}
+The table for successive configurations is on the next page. The string is accepted by M because input and stack both are empty and we are in the final state at the end. \\ \\ \\ \\ \\ \\ \\ \\ \\ 
+\begin{table}[]
+\centering
+\caption{}
+\label{my-label}
+\begin{tabular}{ccrrc}
+{\ul \textbf{Step}} & {\ul \textbf{State}} & {\ul \textbf{Unread Input}} & \multicolumn{1}{c}{{\ul \textbf{Stack}}} & {\ul \textbf{Transition}} \\
+0 & p & abbcbabbaa & e & - \\
+1 & p & bbcbabbaa & a & 1 \\
+2 & p & bcbabbaa & ba & 2 \\
+3 & p & cbabbaa & bba & 2 \\
+4 & p & babbaa & cbba & 3 \\
+5 & p & babbaa & Sbba & 6 \\
+6 & p & babbaa & XSbba & 9 \\
+7 & p & abbaa & bXSbba & 2 \\
+8 & p & abbaa & XbXSbba & 9 \\
+9 & p & abbaa & Sba & 5 \\
+10 & p & bbaa & aSba & 1 \\
+11 & p & bbaa & XaSba & 9 \\
+12 & p & bbaa & XSba & 7 \\
+13 & p & baa & bXSba & 2 \\
+14 & p & aa & XbXSba & 9 \\
+15 & p & aa & Sa & 5 \\
+16 & p & a & aSa & 1 \\
+17 & p & a & XaSa & 9 \\
+18 & p & a & XSa & 7 \\
+19 & p & e & aXSa & 1 \\
+20 & p & e & XaXSa & 9 \\
+21 & p & e & S & 4 \\
+22 & q & e & e & 10
+\end{tabular}
+\end{table} 
+
+
+\section*{Answer 2}
+
+\subsection*{a.}
+%Do not submit solutions for b, yet solve it to prepare for the final.
+$M=(K,\Sigma,\delta,s,H)$ where 
+$$ K=\{s,q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_7,h\} $$
+$$ \Sigma = \{ 1,\ \sqcup,\ \triangleright,\ \leftarrow\ \rightarrow,\ *\}  $$
+$$ H=\{ h \}  $$
+\begin{equation}
+\begin{split}
+ & \delta(s,\triangleright)   = (s,\triangleright,\rightarrow) \\ 
+ & \delta(s,\sqcup)   = (q_0,\sqcup,\rightarrow) \\ 
+ & \delta(q_0,1)   = (q_1,1,\rightarrow) \\ 
+ & \delta(q_1,1)   = (q_0,1,\rightarrow) \\ 
+ & \delta(q_1,\sqcup)   = (h,1,\rightarrow) \\ 
+ & \delta(q_0,\sqcup)   = (q_2,*,\leftarrow) \\ 
+ & \delta(q_2,1)   = (q_3,\sqcup,\leftarrow) \\ 
+ & \delta(q_3,1)   = (q_2,1,\leftarrow) \\ 
+ & \delta(q_2,\sqcup)   = (q_4,\sqcup,\rightarrow) \\ 
+ & \delta(q_3,\sqcup)   = (q_4,\sqcup,\rightarrow) \\ 
+ & \delta(q_4,1)   = (q_4,1,\rightarrow) \\ 
+ & \delta(q_4,\sqcup)   = (q_5,\sqcup,\rightarrow) \\ 
+ & \delta(q_5,1)   = (q_6,\sqcup,\leftarrow) \\ 
+ & \delta(q_5,\sqcup)   = (q_5,\sqcup,\rightarrow) \\ 
+ & \delta(q_5,*)   = (h,\sqcup,\rightarrow) \\ 
+ & \delta(q_6,\sqcup)   = (q_6,\sqcup,\leftarrow) \\ 
+ & \delta(q_6,1)   = (q_7,1,\rightarrow) \\ 
+ & \delta(q_7,\sqcup)   = (q_4,1,\rightarrow) 
+\end{split}
+\end{equation}
+
+\section*{Answer 3}
+The set of languages decided by Move-Restricted Turing Machines is the set of regular languages. If it had more than one tape or were able to move the head both sides than we could have been able to imitate stack operations. In this case there no way to imitate such operations therefore the set if not the set of context-free languages. \\
+Moreover, we can go right, read and write. Only write capability is the extra feature compared to finite state machine. Since we go only right there is no use of write feature. Therefore it is the set of regular languages.
+
+\section*{Answer 4}
+
+\subsection*{a.}
+$M=(K,\Sigma,O,\Delta,s,H)$ where, \\
+$K$ is a finite set of states, \\
+$\Sigma$ is an aplhabet containing blank symbol $\sqcup$ and left end symbol $\triangleright$, \\
+$O=\{"E","D"\}$ is the set of operations, \\
+$s\in K$ is the initial state, \\
+$H\subseteq K$ is the set of halting states, \\
+$\delta$ is the transition function from $(K-H)x\Sigma x\Sigma$ to $KxOx\Sigma$
+\subsection*{b.}
+Configuration is in the following form: \\
+$$Kx\triangleright ((\Sigma-\{\sqcup \})\cup \{e\})\Sigma^*(\Sigma-\{\sqcup \})\cup \{e\})$$
+\subsection*{c.}
+$$(q_1,a_1w_1b_1) \vdash_M (q_2,a_2w_2b_2)$$
+if for some $\sigma \in \Sigma$, $\delta(q_1,a_1,b_1)=(q_2,"E",\sigma)$ then $b_2=\sigma$ and $a_2w_2=a_1w_1b_1$ \\
+And $\delta(q_1,a_1,b_1)=(q_2,"D",\_ \ )$ then $a_2w_2b_2=w_1b_1$ \\ \\
+(Note that in the dequeue operation underscore means that we don't care the sigma) \\ \\
+$\text{Let } M=(K,\Sigma,O,s,\{y,n \}) \text{ be a Queue-based Turing Machine then } $
+$$L(M)=\{w\in\Sigma^*\ :\ (s,w)\vdash^*_M (y,w')\}$$
+\subsection*{d.}
+Assuming the initial configuration as $\triangleright \underline{\sqcup}w$ and no blank characters exists in the string. \\ 
+Assume we are currently in the middle of the string. \\
+- To get to the front element we go left until we see a blank when we do we go right for one step then we get the front element. \\
+- To get to the rear element we go right until we see a blank when we do we go left for one step then we get the rear element. \\
+Now we can choose the right transition from the given Queue-based TM by looking at (we can use a temporary variable for front just as we do with the basic machine transitions) the state, front element and rear element. Then we can decide whether it is defined as enqueue operation or dequeue operation. \\
+- To perform enqueue operation we get to the rear element just like we did earlier but this time we don't go left for one step we stay at the last blank cell and we basically write the given symbol. \\
+- To perform dequeue operation we get to the front element just like we did earlier but this time we don't go right for one step we 
+stay at the first blank cell and we basically write the blank symbol. \\   
+This shows that all the operations of Queue-based TM can be done with a standard Turing Machine. Thereforem Queue-based Turing Machines is equivalent to standard Turing Machines.
+\subsection*{e.}
+Before answering the question, to clarify I used underscore where the element does not matter to keep it simpler for both me and you, dear reading assistant. Otherwise there would be a lot more transitions. \\
+Let $M=(K,\{a,b\},\{"E","D"\},\delta,s,\{y,n\}$) be a Queue-based TM, \\
+where $K=\{s,p_a,p'_a,p_b,p'_b,q_a,q_b,q_{control}\}$ and transition function is the following\\
+\begin{equation}
+\begin{split}
+	& \delta(s,a,\_\ ) = (p_a,"D",\_\ ),  \delta(s,b,\_\ ) = (p_b,"D",\_\ ), \\
+	& \delta(p_a,a,\_\ ) = (p'_a,"E",a), \delta(p'_a,a,\_\ ) = (p_a,"D",\_\ ), \\
+	& \delta(p_a,b,\_\ ) = (p'_a,"E",b), \delta(p'_a,b,\_\ ) = (p_a,"D",\_\ ), \\
+	& \delta(p_a,c,\_\ ) = (p'_a,"E",c), \delta(p'_a,c,\_\ ) = (q_a,"D",\_\ ), \\
+	& \delta(q_a,a,\_\ ) = (q_{control},"D",\_\ ), \delta(q_{control},a,\_\ ) = (p_a,"D",\_\ ), \\
+	& \delta(q_a,b,\_\ ) = (n,"D",\_\ ), \\
+	& \delta(q_a,c,\_\ ) = (n,"D",\_\ ), \\
+	& \delta(p_b,a,\_\ ) = (p'_b,"E",a), \delta(p'_b,a,\_\ ) = (p_b,"D",\_\ ), \\
+	& \delta(p_b,b,\_\ ) = (p'_b,"E",b), \delta(p'_b,b,\_\ ) = (p_b,"D",\_\ ), \\
+	& \delta(p_b,c,\_\ ) = (p'_b,"E",c), \delta(p'_b,c,\_\ ) = (q_b,"D",\_\ ), \\
+	& \delta(q_b,b,\_\ ) = (q_{control},"D",\_\ ), 	\delta(q_{control},b,\_\ ) = (p_b,"D",\_\ ), \\
+	& \delta(q_b,a,\_\ ) = (n,"D",\_\ ), \\
+	& \delta(q_b,c,\_\ ) = (n,"D",\_\ ), \\
+	& \delta(q_{control},c,\_\ ) = (y,"D",\_\ ) 
+\end{split}
+\end{equation} \\
+My idea here was to record the first cell and go to the corresponding state, meaning if the read cell is $a$ then I go to $q_a$. In this state a go right until I see a $c$ until that time I enqueue every symbol I saw (except the first cell recorded). If the cell one after the $c$ does not correspond to the state then I halt as "n" else I continue. \\
+
+\section*{Answer 5}
+
+\subsection*{a.}
+Using the book's notations for the diagram. 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw (5.3,-28.9) node {$R$};
+\draw (24,-28.9) node {$R$};
+\draw (51.5,-28.9) node {$R$};
+\draw (41,-28.9) node {$R$};
+\draw (5.3,-55.9) node {$Y$};
+\draw (41,-55.9) node {$N$};
+\draw (5.3,-41.8) node {$R$};
+\draw (60.5,-28.9) node {$XR$};
+\draw (69.5,-28.9) node {$XR$};
+\draw (78.7,-28.9) node {$XL_{\sqcup}$};
+\draw (16,-28.9) node {$X$};
+\draw (33.3,-28.9) node {$X$};
+\draw [black] (2.62,-30.223) arc (-36:-324:2.25);
+\draw (-1.95,-28.9) node [left] {$X$};
+\fill [black] (2.62,-27.58) -- (2.27,-26.7) -- (1.68,-27.51);
+\draw [black] (22.677,-26.22) arc (234:-54:2.25);
+\draw (24,-21.65) node [above] {$a,X$};
+\fill [black] (25.32,-26.22) -- (26.2,-25.87) -- (25.39,-25.28);
+\draw [black] (43.835,-27.943) arc (101.54073:78.45927:12.071);
+\fill [black] (48.67,-27.94) -- (47.98,-27.29) -- (47.78,-28.27);
+\draw (46.25,-27.2) node [above] {$b$};
+\draw [black] (48.616,-29.707) arc (-80.41844:-99.58156:14.216);
+\fill [black] (43.88,-29.71) -- (44.59,-30.33) -- (44.76,-29.35);
+\draw (46.25,-30.4) node [below] {$b$};
+\draw [black] (50.177,-26.22) arc (234:-54:2.25);
+\draw (51.5,-21.65) node [above] {$X$};
+\fill [black] (52.82,-26.22) -- (53.7,-25.87) -- (52.89,-25.28);
+\draw [black] (39.677,-26.22) arc (234:-54:2.25);
+\draw (41,-21.65) node [above] {$X$};
+\fill [black] (42.32,-26.22) -- (43.2,-25.87) -- (42.39,-25.28);
+\draw [black] (2.62,-43.123) arc (-36:-324:2.25);
+\draw (-1.95,-41.8) node [left] {$X$};
+\fill [black] (2.62,-40.48) -- (2.27,-39.6) -- (1.68,-40.41);
+\draw [black] (38.055,-56.469) arc (-81.63432:-141.46956:33.408);
+\fill [black] (38.06,-56.47) -- (37.19,-56.09) -- (37.34,-57.08);
+\draw (18.65,-55.03) node [below] {$a,b,c$};
+\draw [black] (5.3,-44.8) -- (5.3,-52.9);
+\fill [black] (5.3,-52.9) -- (5.8,-52.1) -- (4.8,-52.1);
+\draw (5.8,-48.85) node [right] {$\sqcup$};
+\draw [black] (5.3,-31.9) -- (5.3,-38.8);
+\fill [black] (5.3,-38.8) -- (5.8,-38) -- (4.8,-38);
+\draw (5.8,-35.35) node [right] {$b$};
+\draw [black] (38.081,-55.209) arc (-104.97357:-149.22705:52.13);
+\fill [black] (38.08,-55.21) -- (37.44,-54.52) -- (37.18,-55.48);
+\draw (16.3,-46.92) node [below] {$\sqcup,c$};
+\draw [black] (39.016,-53.65) arc (-139.54384:-156.06469:90.427);
+\fill [black] (39.02,-53.65) -- (38.88,-52.72) -- (38.12,-53.37);
+\draw (30.67,-44.45) node [left] {$c,\sqcup$};
+\draw [black] (41,-31.9) -- (41,-52.9);
+\fill [black] (41,-52.9) -- (41.5,-52.1) -- (40.5,-52.1);
+\draw (40.5,-42.4) node [left] {$a,\sqcup$};
+\draw [black] (50.754,-31.806) arc (-15.19053:-27.31049:108.994);
+\fill [black] (42.41,-53.25) -- (43.22,-52.77) -- (42.34,-52.31);
+\draw (47.9,-43.61) node [right] {$a,b,\sqcup$};
+\draw [black] (54,-28.9) -- (57.5,-28.9);
+\fill [black] (57.5,-28.9) -- (56.7,-28.4) -- (56.7,-29.4);
+\draw (56,-29.4) node [below] {$c$};
+\draw [black] (63,-28.9) -- (66.5,-28.9);
+\fill [black] (66.5,-28.9) -- (65.7,-28.4) -- (65.7,-29.4);
+\draw (65,-29.4) node [below] {$c$};
+\draw [black] (7.569,-26.938) arc (129.26307:50.73693:54.403);
+\fill [black] (7.57,-26.94) -- (8.51,-26.82) -- (7.87,-26.04);
+\draw [black] (72,-28.9) -- (75.7,-28.9);
+\fill [black] (75.7,-28.9) -- (74.9,-28.4) -- (74.9,-29.4);
+\draw (74.1,-29.4) node [below] {$c$};
+\draw [black] (68.616,-31.766) arc (-19.45249:-73.64383:37.359);
+\fill [black] (43.91,-55.17) -- (44.82,-55.43) -- (44.54,-54.47);
+\draw (63.65,-46.93) node [below] {$a,b,\sqcup$};
+\draw [black] (59.568,-31.751) arc (-19.8225:-51.8528:50.004);
+\fill [black] (43.41,-54.12) -- (44.35,-54.02) -- (43.73,-53.23);
+\draw (53.65,-45.45) node [right] {$a,b,\sqcup$};
+\draw [black] (8.3,-28.9) -- (13,-28.9);
+\fill [black] (13,-28.9) -- (12.2,-28.4) -- (12.2,-29.4);
+\draw (10.65,-29.4) node [below] {$a$};
+\draw [black] (18,-28.9) -- (21,-28.9);
+\fill [black] (21,-28.9) -- (20.2,-28.4) -- (20.2,-29.4);
+\draw [black] (27,-28.9) -- (30,-28.9);
+\fill [black] (30.3,-28.9) -- (29.5,-28.4) -- (29.5,-29.4);
+\draw (28.65,-29.4) node [below] {$b$};
+\draw [black] (35,-28.9) -- (38,-28.9);
+\fill [black] (38,-28.9) -- (37.2,-28.4) -- (37.2,-29.4);
+\end{tikzpicture}
+\end{center}
+
+
+
+
+\subsection*{b.}
+$G=(V,\Sigma,R,S)$ where $V=\{S,P,R,\#,a,b,c\}$, $\Sigma=\{a,b,c\}$ and R is as follows, 
+\begin{equation}
+\begin{split}
+S & \rightarrow \#bP \\
+P & \rightarrow RPccc \\
+bR & \rightarrow Rbb \\
+\#R & \rightarrow a\# \\
+P & \rightarrow e \\
+\# & \rightarrow e
+\end{split}
+\end{equation}
+
+
+\section*{Answer 6}
+Before going to the subsections of this question, I want to show which language is what. \\
+$L_1$ is a regular language because from L-G theorem we know that a language is regular if and only if there exists a regular grammer. \\
+$L_2$ is DPCL because we can built deterministic top-down parser for it. \\
+$L_3$ is CFL because we know that all DCFLs have unambiguous grammars. Therefore it suggests that $L_3$ is only CFL. \\
+$L_4$ is decidable (recursive).\\
+$L_5$ is semi-decidable (recursive enumerable).\\
+\subsection*{a.}
+Yes. All five classes of the given languages are subsets of Turing Machines (recursively enumerable languages). Turing Machine has the most computational power among them. \\
+\subsection*{b.}
+$L_1$, $L_2$, $L_3$ and $L_4$ are subsets of decidable languages therefore there are algorithms for them. However, $L_5$ is semi-decidable therefore there may not be an algorithm for $L_5$ \\
+\subsection*{c.}
+
+
+
+Let's say machine for $L_1$ is $M_1=(K_1,\Sigma_1,\delta_1,s_1,H_1)$ \\
+Let's say machine for $L_2$ is $M_2$ . We can easily construct a machine for $\overline{L_2}$ by exchanging yes and no halting states of $M_2$. Let's call this machine $M_2'$. \\
+Let's say machine for $L_3$ is $M_3=(K_3,\Sigma_3,\delta_3,s_3,H_3)$ \\ 
+Let's say machine for $L_4$ is $M_4$ . We can easily construct a machine for $\overline{L_4}$ by exchanging yes and no halting states of $M_4$. Let's call this machine $M_4'$. \\
+Let's say machine for $L_5$ is $M_5=(K_5,\Sigma_5,\delta_5,s_5,H_5)$ \\
+
+To construct the left hand side of the union what we do is, we first start $M_2'$ with the given input then when it halts we start it with $M_1$. Concurrently we can start it with $M_5$ both of them halt. Then we can loop this. \\
+
+To construct the right side of the union what we do is, we start with $M_3$ and we loop it as many time as we want and then we continue with $M_4'$ \\
+
+
+ 
+ 
+
+
+
+
+
+\subsection*{d.}
+$L$ is clearly a semi-decidable language. Decidable (recursive) languages are closed under complement. However, since $L$ is a semi-decidable language there is no guarantee that there is a TM that semi-decides $\overline{L}$. Meaning recursive enumerable languages are not closed under complementation. \\
+For example (from our lecture with Aysenur Hoca), \\
+$H=\{"M""w"\ :\ TM M halts on w \}$ is not recursive. But H is recursively enumerable. H is semi-decided by U. \\
+U will halt on w if and only if M halts on w. \\
+$H_1=\{"M"\ :\ M halts on w \}$ and then \\
+$\overline{H_1}=\{ \text{w is not a valid TM encoding or w is a TM M string but M does not halt on "M" } \}$ \\
+$\overline{H_1}$ is the diagonal language, and not recursive. Also it cannot be recursive enumerable. \\
+This justifies the previous claim.
+
+%Do not submit solutions for Question 7, yet do solve it.
+
+
+\end{document}
+
+​
+

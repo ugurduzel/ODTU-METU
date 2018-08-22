@@ -1,0 +1,16 @@
+simulate [[P,H],[O,O]] [(S,E),(W,S),(N,W),(E,N),(S,S)]
+simulate [[H,P],[O,O],[X,O]] [(E,S),(S,W),(W,N),(N,E),(S,S)]
+simulate [[H,P],[O,O],[O,O]] [(S,S),(E,W),(E,S),(S,E)]
+simulate [[H,O,O],[O,X,P],[O,O,O],[O,O,X],[O,O,O]] [(E,S),(E,W),(S,S),(S,E),(W,S),(S,E),(S,N),(E,W),(W,W),(W,W)]
+
+simulate [[O,X,X,O,O,H,O],[O,O,O,O,O,O,X],[P,X,X,O,O,X,O]] [(S,N),(W,E),(W,E),(W,E),(E,S),(E,E),(E,N)]
+
+simulate [[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,X,X,O,O,P,O],[O,X,X,O,O,O,O,O,O,O],[O,O,O,X,O,O,O,O,O,X],[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,O,X,O,O,O,O],[O,H,O,O,O,O,X,X,O,O],[O,O,O,X,X,O,O,O,O,O]] [(E,S),(N,S),(E,E),(N,W),(E,E),(E,W),(S,W),(N,W)]
+
+simulate [[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,X,X,O,O,P,O],[O,X,X,O,O,O,O,O,O,O],[O,O,O,X,O,O,O,O,O,X],[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,O,X,O,O,O,O],[O,H,O,O,O,O,X,X,O,O],[O,O,O,X,X,O,O,O,O,O]] [(W,E),(E,S),(E,W),(E,W),(N,W),(W,S),(E,W),(E,S),(S,W),(N,S)]
+
+simulate [[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,X,X,O,O,P,O],[O,X,X,O,O,O,O,O,O,O],[O,O,O,X,O,O,O,O,O,X],[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,O,X,O,O,O,O],[O,H,O,O,O,O,X,X,O,O],[O,O,O,X,X,O,O,O,O,O]] [(W,S),(N,W),(N,W),(N,W),(W,S),(W,W),(S,S),(N,W),(W,W),(N,W),(W,N),(S,W)]
+
+simulate [[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,X,X,O,O,P,O],[O,X,X,O,O,O,O,O,O,O],[O,O,O,X,O,O,O,O,O,X],[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,O,X,O,O,O,O],[O,H,O,O,O,O,X,X,O,O],[O,O,O,X,X,O,O,O,O,O]] [(E,E),(E,E),(N,E),(N,E),(W,N),(N,S),(S,S),(E,E),(E,E),(E,W),(E,W),(W,S),(S,E),(E,S),(E,N),(N,W)]
+
+simulate [[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,X,X,O,O,P,O],[O,X,X,O,O,O,O,O,O,O],[O,O,O,X,O,O,O,O,O,X],[O,O,O,O,O,O,O,O,O,O],[O,O,O,O,O,X,O,O,O,O],[O,H,O,O,O,O,X,X,O,O],[O,O,O,X,X,O,O,O,O,O]] [(W,E),(N,S),(N,E),(N,W),(N,W),(N,W),(W,N),(E,N),(W,W),(E,W),(S,W),(E,S),(E,S),(S,S)]
